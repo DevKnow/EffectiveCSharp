@@ -21,7 +21,7 @@ namespace Item10_58page
         }
     }
 
-    public class MyClass : Object
+    public class MyClass
     {
         public void MagicMethod()
         {

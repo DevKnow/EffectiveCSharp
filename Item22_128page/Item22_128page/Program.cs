@@ -97,4 +97,23 @@ namespace Item22_128page
             Name = n;
         }
     }
+
+    public interface ICovariantDelegates<out T>
+    {
+        T GetAnItem();
+
+        /// <summary>
+        /// 메서드가 반환한 Func<T> 객체를 통해 값을 느긋하게(?) 가져올 수 있다.
+        /// </summary>
+        Func<T> GetAnItemLater();
+
+        void GeiveAnItemLater(Action<T> whatToDo);
+    }
+
+    public interface IContravariantDelegates<in T>
+    {
+        void ActOnAnItem(T item);
+        void GetAnItemLater(Func<T> item);
+        Action<T> ActAnItemLater();
+    }
 }
